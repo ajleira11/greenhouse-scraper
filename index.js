@@ -161,7 +161,7 @@ async function main(urls) {
   const bucketName = process.env.BUCKET_NAME;
   if (!bucketName) {
     throw new Error(
-      "No bucket name specified. Set the BUCKET_NAME env var to specify which Cloud Storage bucket the screenshot will be uploaded to."
+      "No bucket name specified. Set the BUCKET_NAME env var to specify which Cloud Storage bucket the jobs data will be uploaded to."
     );
   }
 
