@@ -135,13 +135,10 @@ async function uploadImage(bucket, taskIndex, allJobs) {
   const date = new Date();
   date.setMinutes(date.getMinutes() - date.getTimezoneOffset());
   const filename = `${date.toISOString()}-${
-    jobsData[0].companyName
+    allJobs[0].companyName
   }-task${taskIndex}`;
 
-  console.log(`Uploading screenshot as '${filename}'`);
-  await bucket.file(filename).save(allJobs);
-
-  const finalData = JSON.stringify(jsonData);
+  const finalData = JSON.stringify(allJobs);
   console.log(`Uploading data as '${filename}.json'`);
   await bucket.file(`${filename}.json`).save(finalData);
 }
